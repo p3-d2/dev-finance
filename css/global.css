@@ -17,3 +17,9 @@ body
   background: var(--gray);
   font-family: "Poppins", sans-serif;
 }
+
+.container
+{
+  width: min(90vw, 800px);
+  margin: auto;
+}
