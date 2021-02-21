@@ -1,4 +1,8 @@
 footer
 {
   text-align: center;
+  color: var(--dark-blue);
+  padding: 4rem 0 2rem;
+
+  opacity: .6;
 }
