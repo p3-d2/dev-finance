@@ -1,13 +1,6 @@
 header
 {
   background-color: var(--background-green);
-  padding: 2rem 0;
-  text-align: center;
-}
-
-#logo
-{
-  color: var(--white);
   padding: 2rem 0 10rem;
-  font-weight: 100;
+  text-align: center;
 }
