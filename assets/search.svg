@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <defs>
+    <style>
+      .a {
+        fill: #363f5f;
+      }
+    </style>
+  </defs>
+  <title>1 Search</title>
+  <path class="a" d="M40.54,33.46l-6.78-6.77a18,18,0,1,0-7.07,7.07l6.77,6.78a5,5,0,0,0,7.08-7.08ZM5,18A13,13,0,1,1,18,31,13,13,0,0,1,5,18Z"/>
+</svg>

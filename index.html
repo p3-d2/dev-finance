@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/balance.css" />
     <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/transaction.css" />
     <link rel="stylesheet" href="css/table.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/modal.css" />
@@ -58,9 +59,22 @@
       <section id="transaction">
         <h2 class="sr-only">Transações</h2>
 
-        <a href="#" onClick="Modal.open()" class="button new">
-          + Nova Transação</a
-        >
+        <div class="options">
+          <a href="#" onClick="Modal.open()" class="button new">
+            + Nova Transação</a
+          >
+
+          <div class="search-box">
+            <label class="sr-only" for="search">Pesquisa</label>
+            <input
+              type="text"
+              id="search"
+              name="search"
+              placeholder="Pesquise transações"
+            />
+            <img src="./assets/search.svg" alt="Lupa" />
+          </div>
+        </div>
 
         <table id="data-table">
           <thead>

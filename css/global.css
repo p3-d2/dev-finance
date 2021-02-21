@@ -84,11 +84,7 @@ button
 
 button:hover { background-color: var(--link-hover); }
 
-.button.new
-{
-  display: inline-block;
-  margin-bottom: .8rem;
-}
+.button.new { display: inline-block; }
 
 .button.cancel
 {

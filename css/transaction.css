@@ -1,0 +1,39 @@
+.options
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: .8rem;
+}
+
+.search-box
+{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  position: relative;
+}
+
+.search-box input
+{
+  border: none;
+  border-radius: .2rem;
+
+  padding: .8rem;
+
+  width: 20rem;
+}
+
+.search-box img
+{
+  position: absolute;
+  top: -.25rem;
+  right: 1.5rem;
+
+  transform: translateY(50%);
+
+  width: 1.75rem;
+  height: 1.75rem;
+}
