@@ -1,8 +1,14 @@
+#transaction
+{
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
 #data-table
 {
   width: 100%;
   border-spacing: 0 .5rem;
-
   color: var(--font-gray);
 }
 
@@ -30,7 +36,7 @@ table thead th
 
 table tbody tr
 {
-  opacity: .7;
+  opacity: .6;
   transition: 500ms opacity;
 }
 
