@@ -39,6 +39,7 @@ table tbody tr
 {
   opacity: .6;
   transition: 500ms opacity;
+  width: 100%;
 }
 
 table tbody tr:hover { opacity: 1 }

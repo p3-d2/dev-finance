@@ -63,12 +63,16 @@ const Transaction = {
 
 const DOM = {
   transactionContainer: document.querySelector("#data-table tbody"),
+  searchBox: document.querySelector("#search").value,
+  trs: [],
 
   addTransaction(transaction, index) {
     const tr = document.createElement("tr");
     tr.innerHTML = DOM.innerHTMLTransaction(transaction, index);
+    tr.style.display = transaction.display;
     tr.dataset.index = index;
 
+    DOM.trs.push(tr);
     DOM.transactionContainer.appendChild(tr);
   },
 
@@ -103,6 +107,21 @@ const DOM = {
 
   clearTransactions() {
     DOM.transactionContainer.innerHTML = "";
+    DOM.trs = [];
+  },
+
+  searchTransaction(event) {
+    const inputValue = event.target.value;
+
+    DOM.trs.forEach((tr, index) => {
+      if (tr.textContent.includes(inputValue)) {
+        Transaction.all[index].display = "table-row";
+      } else {
+        Transaction.all[index].display = "none";
+      }
+    });
+
+    App.reload();
   },
 };
 
@@ -157,7 +176,7 @@ const Form = {
     amount = Utils.formatAmount(amount);
     date = Utils.formatDate(date);
 
-    return { description, amount, date };
+    return { description, amount, date, display: "table-row" };
   },
 
   saveTransaction(transaction) {
@@ -200,3 +219,7 @@ const App = {
 };
 
 App.init();
+
+document
+  .querySelector("#search")
+  .addEventListener("input", DOM.searchTransaction);
