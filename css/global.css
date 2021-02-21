@@ -3,6 +3,8 @@
   --white: #ffffff;
   --gray: #f0f2f5;
   --background-green: #2D4A22;
+  --background-light-green: #49AA26;
+  --dark-blue: #363f5f;
 }
 
 *
@@ -22,4 +24,13 @@ body
 {
   width: min(90vw, 800px);
   margin: auto;
+}
+
+h2
+{
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--dark-blue);
+
+  font-weight: normal;
 }

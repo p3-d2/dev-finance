@@ -1,0 +1,7 @@
+#balance { margin-top: -8rem; }
+
+#balance h2
+{
+  color: var(--white);
+  margin-top: 0;
+}
