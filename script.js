@@ -7,7 +7,7 @@ const Modal = {
   },
 };
 
-const Transactions = {
+const Transaction = {
   all: [
     {
       description: "Luz",
@@ -32,19 +32,19 @@ const Transactions = {
   ],
 
   add(transaction) {
-    Transactions.all.push(transaction);
+    Transaction.all.push(transaction);
     App.reload();
   },
 
   remove(index) {
-    Transactions.all.splice(index, 1);
+    Transaction.all.splice(index, 1);
     App.reload();
   },
 
   incomes() {
     let income = 0;
 
-    Transactions.all.forEach((transaction) => {
+    Transaction.all.forEach((transaction) => {
       if (transaction.amount > 0) {
         income += transaction.amount;
       }
@@ -55,7 +55,7 @@ const Transactions = {
   expenses() {
     let expense = 0;
 
-    Transactions.all.forEach((transaction) => {
+    Transaction.all.forEach((transaction) => {
       if (transaction.amount < 0) {
         expense += transaction.amount;
       }
@@ -64,7 +64,7 @@ const Transactions = {
     return expense;
   },
   total() {
-    const total = Transactions.incomes() + Transactions.expenses();
+    const total = Transaction.incomes() + Transaction.expenses();
     return total;
   },
 };
@@ -74,12 +74,13 @@ const DOM = {
 
   addTransaction(transaction, index) {
     const tr = document.createElement("tr");
-    tr.innerHTML = DOM.innerHTMLTransaction(transaction);
+    tr.innerHTML = DOM.innerHTMLTransaction(transaction, index);
+    tr.dataset.index = index;
 
     DOM.transactionContainer.appendChild(tr);
   },
 
-  innerHTMLTransaction(transaction) {
+  innerHTMLTransaction(transaction, index) {
     const CSSclass = transaction.amount > 0 ? "income" : "expense";
 
     const amount = Utils.formatCurrency(transaction.amount);
@@ -88,7 +89,7 @@ const DOM = {
       <td class="description">${transaction.description}</td>
       <td class="${CSSclass}">${amount}</td>
       <td class="date">${transaction.date}</td>
-      <td><img src="./assets/minus.svg" alt="Remover transação" /></td>
+      <td><img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação" /></td>
     `;
 
     return html;
@@ -96,15 +97,15 @@ const DOM = {
 
   updateBalance() {
     document.querySelector("#incomeDisplay").innerHTML = Utils.formatCurrency(
-      Transactions.incomes()
+      Transaction.incomes()
     );
 
     document.querySelector("#expenseDisplay").innerHTML = Utils.formatCurrency(
-      Transactions.expenses()
+      Transaction.expenses()
     );
 
     document.querySelector("#totalDisplay").innerHTML = Utils.formatCurrency(
-      Transactions.total()
+      Transaction.total()
     );
   },
 
@@ -168,7 +169,7 @@ const Form = {
   },
 
   saveTransaction(transaction) {
-    Transactions.add(transaction);
+    Transaction.add(transaction);
   },
 
   clearFields() {
@@ -195,10 +196,7 @@ const Form = {
 
 const App = {
   init() {
-    Transactions.all.forEach((transaction) => {
-      DOM.addTransaction(transaction);
-    });
-
+    Transaction.all.forEach(DOM.addTransaction);
     DOM.updateBalance();
   },
 

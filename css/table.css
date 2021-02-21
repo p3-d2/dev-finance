@@ -49,6 +49,8 @@ table tbody td
   padding: 1rem 2rem;
 }
 
+table tbody td img { cursor: pointer; }
+
 td.description { color: var(--dark-blue); }
 td.income { color: var(--income); }
 td.expense { color: var(--expense); }
