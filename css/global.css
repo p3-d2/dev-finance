@@ -8,6 +8,7 @@
   --font-gray: #969CB3;
   --income: #12A454;
   --expense: #E92929;
+  --link-hover: #3DD705
 }
 
 *
@@ -51,4 +52,19 @@ h2
   color: var(--dark-blue);
 
   font-weight: normal;
+}
+
+a
+{
+  color: var(--background-light-green);
+  text-decoration: none;
+  transition: 500ms color;
+}
+
+a:hover { color: var(--link-hover); }
+
+a.button.new
+{
+  display: inline-block;
+  margin-bottom: .8rem;
 }
