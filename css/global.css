@@ -5,6 +5,9 @@
   --background-green: #2D4A22;
   --background-light-green: #49AA26;
   --dark-blue: #363f5f;
+  --font-gray: #969CB3;
+  --income: #12A454;
+  --expense: #E92929;
 }
 
 *
@@ -29,7 +32,7 @@ body
 h2
 {
   margin-top: 3.2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem;
   color: var(--dark-blue);
 
   font-weight: normal;

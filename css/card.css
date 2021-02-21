@@ -3,7 +3,7 @@
   background-color: var(--white);
   color: var(--dark-blue);
 
-  border-radius: 0.25rem;
+  border-radius: .25rem;
 
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
@@ -20,7 +20,7 @@
   font-size: 2rem;
   line-height: 3rem;
 
-  margin-top: 0.5rem;
+  margin-top: .5rem;
 }
 
 .card.total
