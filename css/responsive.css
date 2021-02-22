@@ -9,3 +9,14 @@
     gap: 2rem;
   }
 }
+
+@media (max-width: 600px)
+{
+  .options
+  {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .options a { margin-bottom: 1rem; }
+}
