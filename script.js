@@ -127,7 +127,7 @@ const DOM = {
 
 const Utils = {
   formatAmount(value) {
-    return Math.Round(Number(value) * 100);
+    return Math.round(Number(value) * 100);
   },
 
   formatDate(date) {
