@@ -69,7 +69,7 @@ const DOM = {
   addTransaction(transaction, index) {
     const tr = document.createElement("tr");
     tr.innerHTML = DOM.innerHTMLTransaction(transaction, index);
-    tr.style.display = transaction.display;
+    tr.style.display = transaction.display == "none" ? "none" : "table-row";
     tr.dataset.index = index;
 
     DOM.trs.push(tr);
@@ -115,7 +115,7 @@ const DOM = {
 
     DOM.trs.forEach((tr, index) => {
       if (tr.textContent.includes(inputValue)) {
-        Transaction.all[index].display = "table-row";
+        Transaction.all[index].display = "";
       } else {
         Transaction.all[index].display = "none";
       }
@@ -176,7 +176,7 @@ const Form = {
     amount = Utils.formatAmount(amount);
     date = Utils.formatDate(date);
 
-    return { description, amount, date, display: "table-row" };
+    return { description, amount, date, display: "" };
   },
 
   saveTransaction(transaction) {
