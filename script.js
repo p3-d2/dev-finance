@@ -142,6 +142,13 @@ const DOM = {
 
     App.reload();
   },
+
+  preloader() {
+    setTimeout(() => {
+      document.body.classList.add("overflowBody");
+      document.querySelector("#preloader").classList.add("fadeOut");
+    }, 3000);
+  },
 };
 
 const Utils = {
@@ -246,3 +253,5 @@ App.init();
 document
   .querySelector("#search")
   .addEventListener("input", DOM.searchTransaction);
+
+DOM.preloader();
