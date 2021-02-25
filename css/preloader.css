@@ -25,6 +25,7 @@ body {
 
 .fadeOut {
   opacity: 0;
+  visibility: hidden;
 }
 
 .overflowBody {
