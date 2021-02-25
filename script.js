@@ -61,6 +61,7 @@ const DOM = {
   transactionContainer: document.querySelector("#data-table tbody"),
   searchBox: document.querySelector("#search").value,
   trs: [],
+  incomeClicked: false,
 
   addTransaction(transaction, index) {
     const tr = document.createElement("tr");
@@ -116,6 +117,28 @@ const DOM = {
         Transaction.all[index].display = "none";
       }
     });
+
+    App.reload();
+  },
+
+  showOnlyIncomes() {
+    if (this.incomeClicked == false) {
+      this.trs.forEach((tr, index) => {
+        if (tr.textContent.includes("-") == false) {
+          Transaction.all[index].display = "";
+        } else {
+          Transaction.all[index].display = "none";
+        }
+      });
+
+      this.incomeClicked = true;
+    } else {
+      this.trs.forEach((tr, index) => {
+        Transaction.all[index].display = "";
+      });
+
+      this.incomeClicked = false;
+    }
 
     App.reload();
   },
