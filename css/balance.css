@@ -1,7 +1,8 @@
-#balance { margin-top: -6rem; }
+#balance {
+  margin-top: -6rem;
+}
 
-#balance h2
-{
+#balance h2 {
   color: var(--white);
   margin-top: 0;
 }
