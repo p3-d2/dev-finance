@@ -11,7 +11,6 @@ const Storage = {
   get() {
     return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
   },
-
   set(transactions) {
     localStorage.setItem(
       "dev.finances:transactions",
@@ -22,21 +21,18 @@ const Storage = {
 
 const Transaction = {
   all: Storage.get(),
-
   add(transaction) {
-    Transaction.all.push(transaction);
+    this.all.push(transaction);
     App.reload();
   },
-
   remove(index) {
-    Transaction.all.splice(index, 1);
+    this.all.splice(index, 1);
     App.reload();
   },
-
   incomes() {
     let income = 0;
 
-    Transaction.all.forEach((transaction) => {
+    this.all.forEach((transaction) => {
       if (transaction.amount > 0) {
         income += transaction.amount;
       }
@@ -47,7 +43,7 @@ const Transaction = {
   expenses() {
     let expense = 0;
 
-    Transaction.all.forEach((transaction) => {
+    this.all.forEach((transaction) => {
       if (transaction.amount < 0) {
         expense += transaction.amount;
       }
@@ -56,7 +52,7 @@ const Transaction = {
     return expense;
   },
   total() {
-    const total = Transaction.incomes() + Transaction.expenses();
+    const total = this.incomes() + this.expenses();
     return total;
   },
 };
@@ -106,14 +102,14 @@ const DOM = {
   },
 
   clearTransactions() {
-    DOM.transactionContainer.innerHTML = "";
-    DOM.trs = [];
+    this.transactionContainer.innerHTML = "";
+    this.trs = [];
   },
 
   searchTransaction(event) {
     const inputValue = event.target.value;
 
-    DOM.trs.forEach((tr, index) => {
+    this.trs.forEach((tr, index) => {
       if (tr.textContent.includes(inputValue)) {
         Transaction.all[index].display = "";
       } else {
@@ -157,21 +153,21 @@ const Form = {
 
   getValues() {
     return {
-      description: Form.description.value,
-      amount: Form.amount.value,
-      date: Form.date.value,
+      description: this.description.value,
+      amount: this.amount.value,
+      date: this.date.value,
     };
   },
 
   validadeFields() {
-    const { description, amount, date } = Form.getValues();
+    const { description, amount, date } = this.getValues();
 
     if (description.trim() === "" || amount.trim() === "" || date.trim() === "")
       throw new Error("Por favor, preencha todos os campos");
   },
 
   formatValues() {
-    let { description, amount, date } = Form.getValues();
+    let { description, amount, date } = this.getValues();
 
     amount = Utils.formatAmount(amount);
     date = Utils.formatDate(date);
@@ -184,19 +180,19 @@ const Form = {
   },
 
   clearFields() {
-    Form.description.value = "";
-    Form.amount.value = "";
-    Form.date.value = "";
+    this.description.value = "";
+    this.amount.value = "";
+    this.date.value = "";
   },
 
   submit(event) {
     event.preventDefault();
 
     try {
-      Form.validadeFields();
-      const transaction = Form.formatValues();
-      Form.saveTransaction(transaction);
-      Form.clearFields();
+      this.validadeFields();
+      const transaction = this.formatValues();
+      this.saveTransaction(transaction);
+      this.clearFields();
 
       Modal.close();
     } catch (err) {
