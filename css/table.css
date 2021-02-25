@@ -1,32 +1,30 @@
-#transaction
-{
+#transaction {
   display: block;
   width: 100%;
-  overflow-x: auto;
   margin-top: 1.5rem;
 }
 
-#data-table
-{
+#table {
+  overflow-x: auto;
+}
+
+#data-table {
   width: 100%;
-  border-spacing: 0 .5rem;
+  border-spacing: 0 0.5rem;
   color: var(--font-gray);
 }
 
 table thead tr th:first-child,
-table tbody tr td:first-child
-{
-  border-radius: .25rem 0 0 .25rem;
+table tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 table thead tr th:last-child,
-table tbody tr td:last-child
-{
-  border-radius: 0 .25rem .25rem 0;
+table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
-table thead th
-{
+table thead th {
   background-color: var(--white);
 
   font-weight: normal;
@@ -35,23 +33,35 @@ table thead th
   padding: 1rem 2rem;
 }
 
-table tbody tr
-{
-  opacity: .6;
+table tbody tr {
+  opacity: 0.6;
   transition: 500ms opacity;
   width: 100%;
 }
 
-table tbody tr:hover { opacity: 1 }
+table tbody tr:hover {
+  opacity: 1;
+}
 
-table tbody td
-{
+table tbody td {
   background-color: var(--white);
   padding: 1rem 2rem;
 }
 
-table tbody td img { cursor: pointer; }
+table tbody td:nth-child(2) {
+  white-space: nowrap;
+}
 
-td.description { color: var(--dark-blue); }
-td.income { color: var(--income); }
-td.expense { color: var(--expense); }
+table tbody td img {
+  cursor: pointer;
+}
+
+td.description {
+  color: var(--dark-blue);
+}
+td.income {
+  color: var(--income);
+}
+td.expense {
+  color: var(--expense);
+}
