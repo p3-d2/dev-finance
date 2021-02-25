@@ -1,0 +1,32 @@
+body {
+  overflow: hidden;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: var(--background-green);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 500ms opacity;
+}
+
+#preloader img {
+  width: 16rem;
+  height: 16rem;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.overflowBody {
+  overflow: auto;
+}
