@@ -35,9 +35,6 @@ Se você não tiver o git em sua máquina entre no site [oficial!](https://git-s
 ```bash
   # Clonar o repositório
   $ git clone https://github.com/Pedro-frontEnd/dev-finance.git
-
-  # Entrar na pasta do projeto
-  $ cd dev-finance
 ```
 
 Ao clicar duas vezes no **index.html** ele pode ser aberto normalmente pelo seu navegador 🎉🎉🎉!
