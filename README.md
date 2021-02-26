@@ -2,9 +2,9 @@
   <img src="./.github/logo.svg" alt="Dev-finance$">
 </h1>
 
-<h3 align="center">
-  <a href="https://dev-finance-five.vercel.app/">Acessar a demonstração</a>
-</h3>
+<h2 align="center">
+  <a href="https://dev-finance-five.vercel.app/" target="_blank">Acessar a demonstração</a>
+</h2>
 
 # Indice
 
@@ -44,4 +44,4 @@ Ao clicar duas vezes no **index.html** ele pode ser aberto normalmente pelo seu 
 
 ---
 
-<h3 align="center">Projeto feito com 💜 por pedro-frontend</h3>
+<h3 align="center">Projeto feito com 💜 por pedro-frontend!</h3>
