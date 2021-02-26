@@ -110,7 +110,7 @@ const DOM = {
   searchTransaction(event) {
     const inputValue = event.target.value;
 
-    this.trs.forEach((tr, index) => {
+    DOM.trs.forEach((tr, index) => {
       if (tr.textContent.includes(inputValue)) {
         Transaction.all[index].display = "";
       } else {
